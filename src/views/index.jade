@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome 
+  form(name="add-estimation", method="post")
+    div.input
+      span.label
+      input(type="text", name="search")
+    div.actions
+      input(type="submit", value="Search")
+
+  .container
+    each item in items
+      .item
+        p=item.bigTitle
+        p=item.goodsDecs
+        p=item.goodsTags
+        .price
+          p=item.price
+        a(href=item.url) 
+          p=item.goodsSn
